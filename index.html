@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Budget App</title>   
+</head>
+<body>
+    <h1>BUDGET BUDDY</h1>
+
+     <!-- FIRST CONTAINER-->
+    <div id="first-container">
+        <form>
+          <label>Enter Your Budget</label>
+          <input type="number" id="budgetInput" />
+          <button type="button" id="calcButton">Add Budget</button>
+        </form>
+      </div>
+
+       <!-- EXPENSE CONTAINER-->
+      <div id="expenseEntry-container">
+      <form>
+        <label for="expense">Choose your expense:</label>
+        <select id="expenses">
+          <option value="entertainment">Entertainment</option>
+          <option value="food">Food</option>
+          <option value="clothing">Clothing</option>
+          <option value="bills">Bills</option>
+        </select> 
+        <label>Enter Your Expense Amount</label>
+          <input type="number" id="expenseAmount" />
+          <button type="button" id="expenseButton">Add Expense</button>
+      </form>
+
+      <!-- BALANCE CONTAINER -->
+      <div id="balance-container">
+        <div id="budgetTotalAmount">
+          <h2>Budget</h2>
+          <h3 id="budgetMoney" class="moneyOutput">$0</h3>
+        </div>
+        <div id="expensesTotalAmount">
+          <h2>Expenses</h2>
+          <h3 id="expensesMoney" class="moneyOutput">$0</h3>
+        </div>
+        <div id="balanceTotalAmount">
+          <h2>Balance</h2>
+          <h3 id="balanceMoney" class="moneyOutput">$0</h3>
+        </div>
+      </div>
+
+      <!-- RESULT CONTAINER-->
+      <div id="expenses-container">
+        <table id="table-list">
+          <tr>
+            <th>Expense Type</th>
+            <th>Expense Amount</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+</body>
+</html>
