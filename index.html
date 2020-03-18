@@ -4,70 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-    <title>Budget App</title>   
+    <title>Budget Buddy</title>
+    <link rel="stylesheet" href="budget-buddy.css">
 </head>
 <body>
-    <h1>BUDGET BUDDY</h1>
-
-     <!-- FIRST CONTAINER-->
-    <div id="first-container">
-        <form>
-          <label>Enter Your Budget</label>
-          <input type="number" id="budgetInput" />
-          <button type="button" id="calcButton">Add Budget</button>
+    <div class="">
+        <h1></h1>
+        <p>
+            <input id="name" placeholder="Enter you name" />
+            <input id="weeklyBudget" placeholder="0" />
+            <button onclick=addName()>Submit</button>
+        </p>
+        <div id="span"> Weekly Budget: $ </div>
+        <form action="https://www.google.com/" method="get"></form>
+        <div id="page">
+            <h2>Purchases </h2>
+            <p>Pick Category:</p>
+            <select name="category" id="category">
+                <option value="ent" name="type" selected="selected">Entertainment</option>
+                <option value="food">food</option>
+                <option value="clothing">clothing</option>
+                <option value="bills">bills</option>
+            </select>
+        </div>
+        <input id="amount" placeholder="Please Enter the amount you spent" />
+        <input type="submit" value="Add" id="add">
+        <div id="amountHint" style="color: red;"></div>
         </form>
-      </div>
-
-       <!-- EXPENSE CONTAINER-->
-      <div id="expenseEntry-container">
-      <form>
-        <label for="expense">Choose your expense:</label>
-        <select id="expenses">
-          <option value="entertainment">Entertainment</option>
-          <option value="food">Food</option>
-          <option value="clothing">Clothing</option>
-          <option value="bills">Bills</option>
-        </select> 
-        <label>Enter Your Expense Amount</label>
-          <input type="number" id="expenseAmount" />
-          <button type="button" id="expenseButton">Add Expense</button>
-      </form>
+        <div class="largeBox">
+            <div class="expenseBox" id="expense-list">
+                <div>
+                    <h3>Expense:</h3>
+                    <ul id="expensesList">
+                        <li>Entertainment:</li>
+                        <li>Food:</li>
+                        <li>Clothing:</li>
+                        <li>Bills</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Amount:</h3>
+                    <ul id="amountList">
+                        <li id="entertainment">$0</li>
+                        <li id="food">$0</li>
+                        <li id="clothing">$0</li>
+                        <li id="bills">$0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="budget">
+                <p class="title">Total Expenses</p>
+                <p class="money"><span>$</span><span id="expense-amount">0</span></p>
+                <p class="title">Amount Remaining</p>
+                <p class="money"><span id="bank">$</span><span id="bank-amount">0</span></p>
+            </div>
+        </div>
     </div>
-      <!-- BALANCE CONTAINER -->
-      <div id="balance-container">
-        <div id="budgetTotalAmount">
-          <h2>Budget</h2>
-          <h3 id="budgetMoney" class="moneyOutput">$0</h3>
-        </div>
-        <div id="expensesTotalAmount">
-          <h2>Expenses</h2>
-          <h3 id="expensesMoney" class="moneyOutput">$0</h3>
-        </div>
-        <div id="balanceTotalAmount">
-          <h2>Balance</h2>
-          <h3 id="balanceMoney" class="moneyOutput">$0</h3>
-        </div>
-      </div>
-
-      <!-- RESULT CONTAINER-->
-      <div id="expenses-container">
-        <table id="table-list">
-          <tr>
-            <th>Expense Type</th>
-            <th>Expense Amount</th>
-          </tr>
-        </table>
-      </div>  
-    <table id='summary'>
-      <h3>Expense Summary</h3>
-      <table>
-          <tr>
-            <th>Entertainment</th>
-            <th>Food</th>
-            <th>Clothing</th> 
-            <th>Bills</th>
-            </tr>
-        </table> 
+    <script src="budget-buddy.js"></script>
 </body>
+
 </html>
