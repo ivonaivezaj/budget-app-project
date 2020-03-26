@@ -1,66 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Budget Buddy</title>
-    <link rel="stylesheet" href="budget-buddy.css">
-</head>
-<body>
-    <div class="">
-        <h1></h1>
-        <p>
-            <input id="name" placeholder="Enter you name" />
-            <input id="weeklyBudget" placeholder="0" />
-            <button onclick=addName()>Submit</button>
-        </p>
-        <div id="span"> Weekly Budget: $ </div>
-        <form action="https://www.google.com/" method="get"></form>
-        <div id="page">
-            <h2>Purchases </h2>
-            <p>Pick Category:</p>
-            <select name="category" id="category">
-                <option value="ent" name="type" selected="selected">Entertainment</option>
-                <option value="food">food</option>
-                <option value="clothing">clothing</option>
-                <option value="bills">bills</option>
-            </select>
-        </div>
-        <input id="amount" placeholder="Please Enter the amount you spent" />
-        <input type="submit" value="Add" id="add">
-        <div id="amountHint" style="color: red;"></div>
-        </form>
-        <div class="largeBox">
-            <div class="expenseBox" id="expense-list">
-                <div>
-                    <h3>Expense:</h3>
-                    <ul id="expensesList">
-                        <li>Entertainment:</li>
-                        <li>Food:</li>
-                        <li>Clothing:</li>
-                        <li>Bills</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Amount:</h3>
-                    <ul id="amountList">
-                        <li id="entertainment">$0</li>
-                        <li id="food">$0</li>
-                        <li id="clothing">$0</li>
-                        <li id="bills">$0</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="budget">
-                <p class="title">Total Expenses</p>
-                <p class="money"><span>$</span><span id="expense-amount">0</span></p>
-                <p class="title">Amount Remaining</p>
-                <p class="money"><span id="bank">$</span><span id="bank-amount">0</span></p>
-            </div>
-        </div>
-    </div>
-    <script src="budget-buddy.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Budget Buddy</title>
+		<link rel="stylesheet" href="budget-buddy.css" />
+	</head>
+	<body>
+		<div id="grid-container">
+			<!-- main title -->
+			<header>
+				<h1 id="greeting">Budget Buddy Midterm</h1>
+			</header>
 
+			<!-- warnings and greeting -->
+			<div id="secret">
+				<div id="name-budget-warning" ></div>
+				<div id="category-warning" "></div>
+			</div>
+			<!-- name and budget form -->
+			<form class="boxes" id="budget-form">
+				<div id="form-control">
+					<label><h3>Name</h3></label>
+					<input id="name" placeholder="Enter your name" />
+				</div>
+				<div id="form-control">
+					<label><h3>Weekly Budget</h3></label>
+					<input id="weekly-budget" placeholder="Enter your weekly budget" />
+				</div>
+
+				<button id="add-name-budget">Submit</button>
+			</form>
+
+			<div class="boxes" id="starting-budget">Weekly Budget: $0</div>
+			<!-- expense input form -->
+			<section class="boxes" id="input-form">
+				<!-- <h2>Purchases</h2> -->
+				<form>
+					<div id="form-control">
+						<label>
+							<h3>
+								Select a Category
+							</h3>
+						</label>
+						<!-- category dropdown menu -->
+						<select name="categories" id="categories-select" required>
+							<option value="ent" name="type">
+								Entertainment
+							</option>
+							<option value="food">
+								Food
+							</option>
+							<option value="clothing">
+								Clothing
+							</option>
+							<option value="bills">
+								Bills
+							</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<input id="amount" placeholder="Cost" />
+					</div>
+					<button type="submit" value="Add" id="expense">
+						Add
+					</button>
+					<p class="warn"></p>
+				</form>
+			</section>
+			<!-- running totals -->
+			<section class="boxes" id="ent-cat" >
+				<h2>Entertainment</h2>
+				<p class="cat-amounts " id="entertainment">
+					$0
+				</p>
+			</section>
+			<section class="boxes" id="food-cat" >
+				<h2>Food</h2>
+				<p class="cat-amounts " id="food">
+					$0
+				</p>
+			</section>
+			<section class="boxes" id="clothing-cat">
+				<h2>Clothing</h2>
+				<p class="cat-amounts " id="clothing">
+					$0
+				</p>
+			</section>
+			<section class="boxes" id="bills-cat">
+				<h2>Bills</h2>
+				<p class="cat-amounts " id="bills">
+					$0
+				</p>
+			</section>
+			<section class="boxes" id="expense-cat">
+				<h2>Total Expenses</h2>
+				<p class="cat-amounts " id="expense-amount">
+					$0
+				</p>
+			</section>
+			<section class="boxes" id="remaining-cat">
+				<h2>Amount Remaining</h2>
+				<p class="cat-amounts " id="bank-amount">
+					$0
+				</p>
+			</section>
+			<footer>
+				<p>created, designed & coded by LIFO The Party</p>
+				<p>Grand Circus Front-End Bootcamp January 2020 Midterm Project</p>
+				<p>
+					<a href="mailto:chelsswylie@gmail.com">Chelsea Wylie</a>
+					<a href="mailto:ivona.ivezaj@gmail.com">Ivona Gojcaj</a>
+					<a href="mailto:vasavada.ankur@gmail.com">Ankur Vasavada</a>
+				</p>
+			</footer>
+			<script src="budget-buddy.js"></script>
+		</div>
+	</body>
 </html>
